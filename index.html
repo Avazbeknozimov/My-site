@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Meta description -->
+  <meta name="description"
+    content="HTML, CSS, va JavaScript asosidagi mobilga mos o'quv markazi sayti. Ro'yxatdan o'ting va zamonaviy darslarni boshlang.">
+  <title>Shaxsiy blog 🤝</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* FAQAT MODAL UCHUN STILLAR */
+    .modal-wrapper {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-header {
+      background-color: #fff;
+      width: 90%;
+      max-width: 900px;
+      padding: 20px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .modal-header h2 {
+      margin-bottom: 15px;
+    }
+
+    .modal-header button {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .modal-main {
+      position: relative;
+      padding-bottom: 56.25%;
+      /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    #video-modal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    #video-text-modal {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <!-- container -->
+    <div class="container">
+      <div class="header-title-wrap-div">
+        <img class="header-logo-img" src="/img/image.png" alt="Header logo">
+        <h1 class="header-title">UzDigitel</h1>
+      </div>
+      <div>
+        <nav aria-label="asosiy navigatsiya">
+          <ul class="menu">
+            <li><a href="">Html</a></li>
+            <li><a href="">Css</a></li>
+            <li><a href="">Bootstrap</a></li>
+            <li><a href="">Tailwind</a></li>
+            <li><a href="">Javascript</a></li>
+            <li><a href="">React</a></li>
+            <li class="dropdown"><a href="">Boshqalar</a>
+              <ul class="submenu">
+                <li><a href="">Backend</a></li>
+                <li><a href="">Google sheets</a></li>
+                <li><a href="">Appscript</a></li>
+                <li><a href="">Appsheet</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- right-navbar-wrapper -->
+      <div class="header-navbar-right-wrap-div">
+        <ul class="header-navbar-right-wrap-list">
+          <li><a aria-label="Sign in" class="enter-sayt" href="">Sign in</a></li>
+          <li><a aria-label="Sign up" class="enter-sayt" href="">Sign up</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="hero-container">
+      <a aria-label="learn begin" href="" class="hero-btn">O'rganishni boshlash</a>
+    </div>
+  </div>
+
+  <!-- main -->
+  <main role="main" class="main">
+    <!-- section 1  plaform about-->
+    <section aria-label="sub-section" class="sub-section">
+      <div class="sub-container">
+        <div class="sub-section-container-wrapper">
+          <div class="sub-section-container-wrapper-left">
+            <p class="sub-section-container-wrapper-left-text">UzDigital onlayin talim platformasi !</p>
+            <h2 class="sub-section-container-wrapper-left-title">Dasturlashga oid kasblarni o’rgatamiz!</h2>
+            <p class="sub-section-container-wrapper-left-text-red">Bu platformada dasturlashni qiyinchiliksiz o'rganing!
+            </p>
+          </div>
+          <div class="sub-section-container-wrapper-right">
+            <ul class="image-list">
+              <li class="image-item top-img">
+                <img class="image-item-right-my-img" src="/img/Rasimim.jpg" alt="My img">
+              </li>
+              <li class="image-item bottom-img">
+                <img class="image-item-right-my-img" src="/img/Dadam rasmi.jpg" alt="My father img">
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+    <!-- matnlar sectoin -->
+    <section class="information-section">
+      <div class="information-container">
+        <h2 class="information-title">Eslatma !</h2>
+        <!-- Remember -->
+        <p class="information-text"><strong>Kurs davomiyligi:</strong> 3 oy (haftasiga 5 kun, kuniga 2 soat)<br>
+          <strong>O'qitiladigan texnologiyalar:</strong> HTML, CSS, JavaScript, Bootstrap,Tailwind, React.js<br>
+          <strong>Darslar formati:</strong> Video darslar, amaliy mashqlar, real loyihalar<br>
+          <strong>Talablar:</strong> Kuniga kamida 1-2 soat vaqt ajratish tavsiya etiladi<br>
+          <strong>Natija:</strong> Kurs yakunida portfolioga 5 ta real loyiha qo'shishingiz mumkin bo'ladi
+        </p>
+      </div>
+    </section>
+
+    <!-- ul darslar -->
+    <section aria-label="asosiy-menu" class="asosiy section">
+      <div class="main-conatiner">
+        <div class="list-item-wrap-div">
+          <h2 class="main-title">Darslar</h2>
+          <div class="carusel-wrap">
+            <!-- carusel btn-left -->
+            <p id="carusel-btn-left" class="carusel-btn">&lt;</p>
+            <!-- Darslardagi carusel -->
+            <ul class="carusel-list">
+              <li id="carusel-list-item" class="carusel-list-item">Html</li>
+              <li id="carusel-list-item" class="carusel-list-item">Css</li>
+              <li id="carusel-list-item" class="carusel-list-item">Bootstrap</li>
+              <li id="carusel-list-item" class="carusel-list-item">Tailwind</li>
+              <li id="carusel-list-item" class="carusel-list-item">JavaScript</li>
+              <li id="carusel-list-item" class="carusel-list-item">React</li>
+            </ul>
+            <!-- carusel btn-right -->
+            <p id="carusel-btn-right" class="carusel-btn">&gt;</p>
+          </div>
+          <ul class="list"></ul>
+        </div>
+
+        <!-- modal -->
+        <div class="modal-wrapper" id="modal-wrapper">
+          <div class="modal-header">
+            <h2>Video darslar</h2>
+            <button id="modal-close-btn">&times;</button>
+            <div class="modal-main">
+              <iframe aria-label="video" id="video-modal" src="" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+              <span id="video-text-modal"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section aria-label="faq-section">
+      <div class="faq-container">
+        <div class="faq-wrapper">
+          <div class="faq-wrapper-header">
+            <div class="faq-header">
+              <h2>Tez tez beriladigan savollar</h2>
+              <p class="faq-open">+</p>
+              <p class="faq-close">X</p>
+            </div>
+            <div class="faqbody">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia modi tempore in explicabo, natus
+                saepe earum aperiam assumenda, repudiandae ullam eos consectetur sapiente et? Id aperiam quo aliquam
+                doloribus nam.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+  <!-- Cta -->
+  <div class="cta">
+    <div class="overlay-cta"></div>
+    <div class="cta-container">
+      <div class="cta-content">
+        <h2 class="cta-title">Yangi Avlod Dasturchilari Bu Yerda Boshlaydi</h2>
+        <p class="cta-subtitle">HTML, CSS, JavaScript va boshqa texnologiyalarni biz bilan birga o'rganing!</p>
+        <a aria-label="learn begin" href="#" class="cta-btn">O'rganishni boshlash 🚀</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer role="contentinfo" class="footer">
+    <div class="footer-container footer-flex">
+      <div class="footer-left-wrapper">
+        <h2 class="footer-title"><span class="UzDigital-span-text">Uzdigitel</span> onlayn platforma</h2>
+        <p class="Uzdigitel-text">Bu platformada siz o'z bilimingizni yanada oshirish imkoniyatiga egasiz yoki noldan
+          to'liq
+          dasturlash asoslarini o'rganishingiz mumkin.</p>
+      </div>
+      <div class="footer-nav-bar">
+        <!-- nav bar -->
+        <nav>
+          <ul class="footer-list">
+            <li class="footer-list-item"><a class="footer-list-item-link" aria-label="Html" href="#">Html</a></li>
+            <li class="footer-list-item"><a class="footer-list-item-link" aria-label="Css" href="#">Css</a></li>
+            <li class="footer-list-item"><a class="footer-list-item-link" aria-label="Bootstrap" href="#">Bootstrap</a>
+            </li>
+            <li class="footer-list-item"><a class="footer-list-item-link" aria-label="Tailwind" href="#">Tailwind</a>
+            </li>
+            <li class="footer-list-item"><a class="footer-list-item-link" aria-label="JavaScript"
+                href="#">JavaScript</a></li>
+            <li class="footer-list-item"><a class="footer-list-item-link" aria-label="React" href="#">React</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <div class="call">
+          <a class="Boglanish" href="#">
+            Telefon raqam : +99894 009-78-18
+          </a>
+        </div>
+        <p>&copy; 2025 Dasturchi Nozimov Avazbek</p>
+      </div>
+      <div>
+        <a aria-label="Footer-telegram-icon" href="#"> <img class="Footer-telegram-icon" src="/img/Telgram iconsvg.svg"
+            alt="Footer-telegram-icon"></a>
+        <a aria-label="Footer-instagram-icon" href="#"> <img class="Footer-instagram" src="/img/Instagram.svg"
+            alt="Instagram"></a>
+        <a aria-label="footer-facebook social-icon" href="#"><svg class="footer-facebook social-icon"
+            xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+            <path class="outline circle" fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path>
+            <path class="inner-icon" fill="#fff"
+              d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z">
+            </path>
+          </svg></a>
+
+      </div>
+    </div>
+  </footer>
+  <!-- script -->
+  <script src="/savollar.js"></script>
+  <script src="/app.js"></script>
+</body>
+
+</html>
