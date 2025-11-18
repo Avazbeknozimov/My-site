@@ -217,7 +217,7 @@ main {
 
 .sub-section-container-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
   align-items: center;
   background-color: rgba(245, 247, 250, 0.9);
   border: 1px solid rgba(245, 247, 250, 0.9);
@@ -300,12 +300,15 @@ padding-bottom: 80px;
 }
 
 .image-item-right-my-img {
-  width: 200px;
+  width: 180px;
   height: 200px;
   border-radius: 50%;
   object-fit: fill;
   transition: all 1s;
 }
+
+
+
 
 .main-title {
   text-align: center;
